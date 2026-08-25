@@ -69,7 +69,7 @@ export function HeroCinematic() {
       className="relative isolate flex min-h-dvh items-center overflow-hidden bg-paper pt-[calc(var(--header-h)+clamp(2rem,5vw,3.5rem))] pb-16"
     >
       {/* Fondo a sangre + lavado radial. Nada de color plano.
-          La foto sube del 16 % al 26 %: ahora se reconoce la recepcion del hotel
+          La foto sube al 38 %: se reconoce la recepcion del hotel con claridad
           sin convertirse en la protagonista. El opacity es el unico numero que
           hay que tocar para calibrarla.
           La mascara radial vacia el centro del encuadre (donde caen el titular,
@@ -82,7 +82,7 @@ export function HeroCinematic() {
           priority
           decorative
           wrapperClassName="absolute inset-0 !aspect-auto h-full w-full"
-          className="opacity-[0.26] [mask-image:radial-gradient(95%_75%_at_50%_46%,transparent_0%,rgba(0,0,0,0.45)_45%,#000_78%)]"
+          className="opacity-[0.38] [mask-image:radial-gradient(95%_75%_at_50%_46%,transparent_0%,rgba(0,0,0,0.4)_38%,#000_70%)]"
         />
       </div>
       <div
