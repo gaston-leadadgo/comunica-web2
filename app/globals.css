@@ -1,0 +1,502 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   COMUNICA - Sistema de diseno
+   Fuente de verdad: branding/Comunica-Identidad-Visual.pdf
+   Colores planos oficiales: Process Black #1D1D1B | Process Cyan #009FE3 | 540 C #003057
+   Degradado oficial: lineal 100 grados, de 540 C a Process Cyan
+   ========================================================================== */
+
+@theme {
+  /* --- Marca plana (manual, autoridad maxima) --- */
+  --color-ink: #1d1d1b; /* Process Black C */
+  --color-cyan: #009fe3; /* Process Cyan C - relleno/gradiente. Texto SOLO sobre oscuro. */
+  --color-navy: #003057; /* Pantone 540 C */
+
+  /* --- Derivados accesibles (de sistema, no de marca) ---
+     El cyan de marca sobre blanco da 2,97:1 -> falla AA incluso para texto
+     grande. Estos derivados mantienen el matiz 198 grados y si pasan. */
+  --color-cyan-ink: #0077a8; /* 5,00:1 /blanco - enlaces y texto cyan en claro */
+  --color-cyan-ink-strong: #005e86; /* 7,13:1 /blanco - eyebrows mono a 11px */
+  --color-cyan-strong: #0089c4; /* 3,91:1 /blanco - titulares >=24px bold */
+  --color-cyan-soft: #4fc3f1; /* 6,67:1 /navy - texto cyan pequeno en oscuro */
+  --color-navy-deep: #002440;
+  --color-abyss: #0a1a2b; /* heros oscuros; cyan encima da 5,91:1 */
+
+  /* --- Superficies --- */
+  --color-paper: #ffffff;
+  --color-paper-warm: #fafaf8; /* gris calido, nunca azulado: evita el look telco */
+  --color-paper-warm-2: #f1efec;
+  --color-hairline: #e7e7e3;
+
+  /* --- Texto --- */
+  --color-fg: #1d1d1b; /* 16,88:1 /blanco */
+  --color-fg-muted: #5a5a57; /* 6,36:1 /warm */
+  --color-fg-inverse: #ffffff;
+  --color-fg-inverse-muted: #c7cdd4; /* 8,40:1 /navy */
+
+  --color-line: rgb(29 29 27 / 0.1);
+  --color-line-dark: rgb(255 255 255 / 0.14);
+
+  /* --- Semanticos accesibles --- */
+  --color-positive: #0f7a52; /* 5,35:1 /blanco */
+  --color-positive-soft: #34d399; /* 7,00:1 /navy */
+  --color-critical: #b3261e; /* 6,54:1 /blanco */
+  --color-critical-soft: #ff8a80; /* 5,90:1 /navy */
+
+  /* --- Tipografia: 3 familias, 3 trabajos, sin solaparse --- */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Space Grotesk no tiene 800 ni cursiva real. Tope 700, italic prohibido.
+     ---------------------------------------------------------------------------
+     ESCALA RECORTADA (revision de cliente): los topes anteriores (84px en los
+     display, 88px en metric, 22px en lead) producian titulares de 3 a 5 lineas
+     que se comian la pantalla. El tamano no es jerarquia: a 84px un titular de
+     83 caracteres necesita 2.900px de linea, y ningun contenedor los tiene.
+     Los topes de abajo estan calculados para que el titular mas largo de cada
+     rol quepa en 2 lineas a 1440px. */
+  --text-display-1: clamp(2rem, 4vw + 0.25rem, 4rem);
+  --text-display-1--line-height: 0.98;
+  --text-display-1--letter-spacing: -0.03em;
+  --text-display-1--font-weight: 700;
+
+  /* Hero partido (titular + mockup al lado): la columna de texto ocupa ~630px
+     en pantalla grande, y ahi 84px hacen que un titular de 65 caracteres caiga
+     en 6 lineas. Este token es display-1 recortado para ese caso concreto; los
+     heros a ancho completo siguen usando display-1. */
+  --text-display-split: clamp(2.125rem, 4.2vw + 0.25rem, 4.25rem);
+  --text-display-split--line-height: 0.98;
+  --text-display-split--letter-spacing: -0.03em;
+  --text-display-split--font-weight: 700;
+
+  /* Hero cinematografico centrado. El titular viene partido en dos lineas desde
+     el copy: la mas larga son 43 caracteres, que a 56px miden ~1.150px y caben
+     en el contenedor de 76rem. Dos lineas, no tres. */
+  --text-display-hero: clamp(1.875rem, 3.6vw + 0.5rem, 3.5rem);
+  --text-display-hero--line-height: 1.04;
+  --text-display-hero--letter-spacing: -0.03em;
+  --text-display-hero--font-weight: 700;
+
+  /* Titular de seccion. El mas largo de la home son 93 caracteres ("No
+     necesitas un proveedor que sepa..."): a 44px caben en 2 lineas de 1.090px. */
+  --text-display-2: clamp(1.625rem, 2.6vw + 0.4rem, 2.75rem);
+  --text-display-2--line-height: 1.06;
+  --text-display-2--letter-spacing: -0.024em;
+  --text-display-2--font-weight: 700;
+
+  --text-display-3: clamp(1.375rem, 1.1vw + 0.7rem, 1.75rem);
+  --text-display-3--line-height: 1.14;
+  --text-display-3--letter-spacing: -0.018em;
+  --text-display-3--font-weight: 600;
+
+  --text-card-title: 1rem;
+  --text-card-title--line-height: 1.3;
+  --text-card-title--letter-spacing: -0.01em;
+  --text-card-title--font-weight: 600;
+
+  --text-metric: clamp(2.5rem, 4vw + 0.4rem, 4.5rem);
+  --text-metric--line-height: 0.92;
+  --text-metric--letter-spacing: -0.04em;
+  --text-metric--font-weight: 700;
+
+  --text-lead: clamp(1rem, 0.35vw + 0.92rem, 1.1875rem);
+  --text-lead--line-height: 1.55;
+  --text-lead--letter-spacing: -0.004em;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+
+  /* Existia en 19 sitios del codigo pero NO como token: `text-body-sm` no
+     generaba ninguna clase, asi que todos esos textos se renderizaban a 16px
+     heredados del body. Es una de las causas de que las secciones midieran mas
+     de un viewport. */
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.6;
+
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.55;
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--font-weight: 600;
+
+  --text-data: 0.8125rem;
+  --text-data--line-height: 1.4;
+  --text-data--letter-spacing: 0;
+
+  /* --- Ritmo vertical: generoso, pero acotado ---
+     Los valores anteriores (hasta 192px arriba y abajo) sumaban 384px de aire
+     por seccion. Con la escala tipografica recortada eso dejaba las secciones
+     por encima del viewport aunque el contenido cupiese. Estos topes mantienen
+     el aire editorial y dejan que una seccion media entre en una pantalla. */
+  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
+  --spacing-section-sm: clamp(3.5rem, 5vw, 6rem);
+  --spacing-section: clamp(5rem, 7.5vw, 9rem);
+  --spacing-section-lg: clamp(6.5rem, 10vw, 12rem);
+
+  /* --- Radios --- */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.5rem;
+
+  /* --- Sombras tintadas en navy, nunca negras --- */
+  --shadow-xs: 0 1px 2px rgb(0 48 87 / 0.06);
+  --shadow-sm: 0 2px 10px -3px rgb(0 48 87 / 0.1);
+  --shadow-md: 0 14px 32px -14px rgb(0 48 87 / 0.18);
+  --shadow-lg: 0 36px 72px -28px rgb(0 48 87 / 0.3);
+  --shadow-contact: 0 2px 8px rgb(29 29 27 / 0.16);
+  --shadow-cyan: 0 40px 120px rgb(0 159 227 / 0.08);
+
+  /* --- Easing --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================================
+   Degradado oficial 100 grados - definido UNA sola vez
+   ========================================================================== */
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(100deg, var(--color-navy) 0%, var(--color-cyan) 100%);
+}
+
+/* Invertido: para CTA con texto blanco, asi el texto cae sobre el extremo navy.
+   Blanco sobre el extremo cyan daria 2,97:1 y fallaria. */
+@utility bg-brand-gradient-flip {
+  background-image: linear-gradient(100deg, var(--color-cyan) 0%, var(--color-navy) 100%);
+}
+
+/* Degradado de marca con velo navy, para los CTA de cierre.
+   ---------------------------------------------------------------------------
+   El problema, medido: el degradado va de navy a cyan, y el bloque de texto
+   centrado ocupa del 21 % al 78 % del recorrido, asi que su mitad derecha cae
+   sobre color casi cyan. Blanco sobre el extremo cyan da 2,97:1 y falla AA.
+   Invertir el degradado no lo arregla, solo mueve el problema al otro lado.
+
+   Un velo plano de navy al 40 % encima si lo arregla: en el punto mas claro del
+   bloque el fondo pasa a #0073AB, donde el blanco da 5,22:1. El angulo sigue
+   siendo el 100 grados que fija el manual; el velo no lo toca.
+
+   Regla que se deriva de esto: sobre este fondo el texto va en BLANCO SOLIDO.
+   Blanco al 80 % baja a 3,91:1 y el cyan de marca da 1,76:1 (invisible). El
+   acento cyan de estos bloques lo pone el boton, que lleva texto en tinta. */
+@utility bg-brand-gradient-veiled {
+  background-image:
+    linear-gradient(rgb(0 48 87 / 0.4), rgb(0 48 87 / 0.4)),
+    linear-gradient(100deg, var(--color-navy) 0%, var(--color-cyan) 100%);
+}
+
+@utility bg-brand-gradient-soft {
+  background-image: linear-gradient(100deg, rgb(0 48 87 / 0.04) 0%, rgb(0 159 227 / 0.07) 100%);
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(100deg, var(--color-navy) 0%, var(--color-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility border-brand-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-paper), var(--color-paper)) padding-box,
+    linear-gradient(100deg, var(--color-navy), var(--color-cyan)) border-box;
+}
+
+/* ============================================================================
+   "D-crop" - ninguna imagen es un rectangulo.
+   Lado plano al borde del viewport o al texto; lado curvo abre al contenido.
+   ========================================================================== */
+
+@utility d-crop-r {
+  border-radius: 0 clamp(96px, 18vw, 320px) clamp(96px, 18vw, 320px) 0;
+  overflow: hidden;
+}
+
+@utility d-crop-l {
+  border-radius: clamp(96px, 18vw, 320px) 0 0 clamp(96px, 18vw, 320px);
+  overflow: hidden;
+}
+
+/* ============================================================================
+   Medida de linea, calibrada
+   ---------------------------------------------------------------------------
+   `ch` mide el avance del glifo "0", y en Plus Jakarta Sans ese glifo es
+   ancho (0,73em). Medido en pantalla: `46ch` da 727px y renderiza 65
+   caracteres reales por linea, no 46. El factor es ~1,41.
+
+   Estas utilidades expresan la medida en CARACTERES REALES, que es lo que
+   importa para la lectura. Si algun dia cambia la fuente de texto, se recalibra
+   aqui y no en veinte componentes.
+   ========================================================================== */
+
+/* ~50 caracteres: la medida editorial de los parrafos de entrada. Sube de 32ch
+   a 36ch al bajar el lead de 22px a 19px: mantiene la longitud de linea comoda
+   en caracteres y quita una linea a cada parrafo de entrada. */
+@utility measure-lead {
+  max-inline-size: 36ch;
+}
+
+/* ~62 caracteres: parrafos de cuerpo. */
+@utility measure-body {
+  max-inline-size: 44ch;
+}
+
+/* ~38 caracteres: texto de tarjeta. */
+@utility measure-card {
+  max-inline-size: 27ch;
+}
+
+/* Escudo: geometria del simbolo D aplicada a tarjetas destacadas */
+@utility rounded-shield {
+  border-radius: var(--radius-sm) var(--radius-2xl) var(--radius-2xl) var(--radius-sm);
+}
+
+/* ============================================================================
+   Enfasis de "tu hotel"
+   ---------------------------------------------------------------------------
+   Peticion de cliente: la expresion se destaca en TODA la web. Aparece en
+   titulares (ink sobre claro), en parrafos apagados (`fg-muted`), sobre navy y
+   sobre el degradado del CTA de cierre, asi que un color fijo no vale: en la
+   mitad de esos fondos seria ilegible.
+
+   La solucion es no tocar el color del texto. El enfasis lo pone un trazo cyan
+   por detras de la linea base —el gesto de subrayador— mas el peso. Asi el
+   texto conserva SIEMPRE el contraste que ya tenia sobre su fondo, y el acento
+   funciona igual en claro y en oscuro. `box-shadow: inset` en lugar de
+   `background` para que el trazo no se parta al final de linea.
+   ========================================================================== */
+
+@layer components {
+  .mark-hotel {
+    font-style: normal;
+    font-weight: 700;
+    box-shadow: inset 0 -0.3em 0 rgb(0 159 227 / 0.28);
+  }
+
+  /* Sobre superficies oscuras el cyan pierde presencia contra el fondo: sube
+     de opacidad para que el trazo siga leyendose. */
+  [data-tone="dark"] .mark-hotel {
+    box-shadow: inset 0 -0.3em 0 rgb(0 159 227 / 0.42);
+  }
+}
+
+/* ============================================================================
+   Marquee de grupos hoteleros y fondos ambientales
+   ========================================================================== */
+
+@keyframes comunica-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@utility animate-marquee {
+  animation: comunica-marquee 46s linear infinite;
+}
+
+/* Punto de estado. Late UNA vez cada 4 s y se esta quieto el resto del ciclo.
+   Un `animate-ping` continuo se lee como alarma activa, y aqui el punto solo
+   señala "esto es una incidencia", no "esto esta pasando ahora mismo". */
+@keyframes comunica-blip {
+  0%, 6%, 100% { opacity: 1; }
+  3% { opacity: 0.25; }
+}
+
+@utility animate-blip {
+  animation: comunica-blip 4s ease-in-out infinite;
+}
+
+/* Sustitucion de panel en pestanas. Se descubre de arriba abajo con clip-path,
+   nunca con crossfade: dos bloques de texto fundiendose quedan los dos legibles
+   a la vez y se lee como un fallo de render. */
+@keyframes comunica-reveal-down {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@utility animate-reveal-down {
+  animation: comunica-reveal-down 300ms var(--ease-out-expo) both;
+}
+
+/* Lavado radial: el fondo ambiental del hero. Nada de colores planos. */
+@utility bg-radial-wash {
+  background-image:
+    radial-gradient(120% 90% at 50% 0%, rgb(0 159 227 / 0.14) 0%, transparent 60%),
+    radial-gradient(80% 60% at 50% 100%, rgb(0 48 87 / 0.10) 0%, transparent 70%);
+}
+
+/* Rejilla de puntos muy tenue: textura, no decoracion. */
+@utility bg-dot-grid {
+  background-image: radial-gradient(rgb(29 29 27 / 0.09) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* ============================================================================
+   Texto legal
+   ---------------------------------------------------------------------------
+   Las paginas legales son el unico sitio del proyecto con texto corrido largo y
+   jerarquia de documento. En lugar de repartir clases por cada etiqueta, se
+   estilan por descendencia dentro de un contenedor. Es la excepcion justificada
+   a componer con utilidades.
+   ========================================================================== */
+
+@utility legal-prose {
+  & h1 {
+    font-size: var(--text-display-2);
+    line-height: 1.06;
+    letter-spacing: -0.024em;
+    font-weight: 700;
+  }
+
+  & h2 {
+    margin-block-start: 2.75rem;
+    font-size: var(--text-display-3);
+    line-height: 1.14;
+    font-weight: 600;
+  }
+
+  & p,
+  & li {
+    max-inline-size: 44ch;
+    margin-block-start: 1rem;
+    color: var(--color-fg-muted);
+  }
+
+  & ul {
+    margin: 0;
+    padding-inline-start: 1.25rem;
+    list-style: disc;
+  }
+
+  & a {
+    color: var(--color-cyan-ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  & strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+}
+
+/* ============================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  :root {
+    --header-h: 72px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    text-wrap: pretty;
+  }
+
+  /* Hueco reservado para el CTA flotante movil (`StickyMobileCta`).
+     ---------------------------------------------------------------------------
+     El componente pone la barra con `lg:hidden` (desaparece a partir de 1024px),
+     pero el `<body>` reservaba el padding-bottom en JS SIN esa misma condicion:
+     en escritorio quedaba una franja blanca vacia del alto de una barra que ya
+     no estaba. La condicion vive aqui, en el mismo breakpoint que la barra, y el
+     componente solo pone o quita el atributo. */
+  body[data-sticky-cta="true"] {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  @media (min-width: 1024px) {
+    body[data-sticky-cta="true"] {
+      padding-bottom: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    hanging-punctuation: first;
+    margin: 0;
+    /* Guionado automatico DESACTIVADO a proposito.
+       ------------------------------------------------------------------
+       Estaba puesto para que "Telecomunicaciones" (~396px a tamano display,
+       mas que el ancho util de un movil de 375px) no desbordase su caja. Pero
+       `hyphens: auto` no espera a que haga falta: parte cualquier palabra en
+       cuanto le conviene para equilibrar la linea, y en titulares de dos o
+       tres palabras eso salia como "Ma-ñana" o "ma-ñana" — un corte que en un
+       titular de marca se lee como una errata, no como tipografia.
+
+       `overflow-wrap: break-word` cubre igualmente el caso de desbordamiento
+       real: parte la palabra solo cuando de verdad no cabe. Sin guion, pero
+       tampoco rompe el layout, que era el unico motivo por el que estaba. */
+    hyphens: manual;
+    overflow-wrap: break-word;
+  }
+
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  /* Foco: navy sobre claro (13,46:1), cyan sobre oscuro. */
+  :focus-visible {
+    outline: 3px solid var(--color-navy);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+  }
+
+  [data-tone="dark"] :focus-visible {
+    outline-color: var(--color-cyan);
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  ::selection {
+    background: rgb(0 159 227 / 0.22);
+    color: var(--color-navy);
+  }
+
+  /* Cifras siempre tabulares: se leen como instrumentacion, no como texto */
+  [data-tabular] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
