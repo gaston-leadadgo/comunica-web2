@@ -22,9 +22,15 @@ import { cn } from "@/lib/utils/cn";
  * El titulo baja de 88px a 64px por la misma razon: "iAndrea" funciona como
  * logotipo de producto sin necesidad de ocupar un tercio de la pantalla.
  *
- * La plancha del movil es Tier B: la foto sale con la pantalla en navy plano y la
- * interfaz de voz se compone encima con CSS. Un dashboard generado por IA con
- * texto dentro sale en jerigonza y mata la credibilidad.
+ * La imagen de la columna derecha deja de ser una plancha Tier B. El plan
+ * original era una foto con la pantalla del movil en navy plano y la interfaz de
+ * voz compuesta encima por CSS, pero ese overlay nunca se llego a construir: en
+ * pantalla quedaba un movil con la pantalla apagada, que no dice absolutamente
+ * nada de lo que es iAndrea. Por eso ahora el argumento lo cuenta la ESCENA y no
+ * una interfaz: un mostrador de recepcion vacio de madrugada con el telefono
+ * atendiendo una llamada solo. Se lee sin rotulos, que es justo lo que hace
+ * falta, porque cualquier texto o UI generada por un modelo de imagen sale en
+ * jerigonza y mata la credibilidad.
  */
 export function IandreaBlock() {
   const { iandrea } = home;

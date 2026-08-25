@@ -92,10 +92,24 @@ export function ProblemBlock() {
               Antes ocupaba la columna derecha del encabezado, donde se leia
               antes que los tres sintomas a los que se refiere — el "mientras
               tanto" no tenia todavia un "mientras" al que remitir. Aqui cierra
-              la escena en el orden en que ocurre. */}
-          <div className="mt-6 flex items-start gap-4 border-l-2 border-cyan pl-5">
+              la escena en el orden en que ocurre.
+
+              Tamano: iba a `text-body` (16px) justo debajo de tres tarjetas a
+              `text-display-3` (22-28px), y la caida de 12px se leia como una nota
+              al pie en lugar de como el cuarto tiempo de la misma frase. Sube a
+              `text-display-3`, el mismo escalon que los sintomas, y se queda en
+              `fg-muted` para no competir con la cita navy que viene despues: es
+              la consecuencia, no un titular nuevo.
+
+              Medida: `measure-body` son 44ch, que a 28px partia la frase en dos
+              lineas cortas y dejaba media seccion vacia a la derecha debajo de un
+              bento a todo el ancho. A 56ch entra en dos lineas equilibradas. */}
+          <div className="mt-7 border-l-2 border-cyan pl-5">
             {problem.body.map((p) => (
-              <p key={p} className="measure-body text-body text-fg-muted">
+              <p
+                key={p}
+                className="max-w-[56ch] text-display-3 text-fg-muted text-pretty"
+              >
                 {p}
               </p>
             ))}

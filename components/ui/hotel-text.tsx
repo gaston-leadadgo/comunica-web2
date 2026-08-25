@@ -16,6 +16,12 @@ import { Fragment } from "react";
  * un trazo cyan bajo la linea base. Es lo que permite usarlo indistintamente en
  * un titular oscuro sobre blanco, en un parrafo apagado o sobre el degradado del
  * CTA de cierre sin perder contraste en ninguno.
+ *
+ * La UNICA excepcion es `variant="accent"`, reservada al titular del hero: ahi
+ * el fondo es conocido y el cliente pide que la expresion iguale el cyan de la
+ * segunda linea, con el trazo dibujandose al entrar. Es una variante explicita y
+ * no el comportamiento por defecto justamente para que el resto de la web siga
+ * siendo seguro sobre cualquier fondo.
  */
 
 /**
@@ -25,6 +31,13 @@ import { Fragment } from "react";
  * asi no se arrastra `lastIndex` entre llamadas.
  */
 const TU_HOTEL = String.raw`\btu\s+hotel\b`;
+
+/**
+ * `underline` es el trazo cyan que no toca el color, valido sobre cualquier
+ * fondo. `accent` colorea el texto en `--color-cyan-strong` y dibuja el trazo al
+ * entrar: solo para el titular del hero, sobre papel.
+ */
+export type MarkVariant = "underline" | "accent";
 
 /** Escapa los metacaracteres para poder pasar frases literales como patron. */
 function escapeRegExp(literal: string) {
@@ -39,16 +52,19 @@ function escapeRegExp(literal: string) {
  * patron sobre cada trozo (y el `lastIndex` que eso arrastraria con la bandera
  * global).
  */
-function markUp(text: string, pattern: string) {
+function markUp(text: string, pattern: string, variant: MarkVariant) {
   const parts = text.split(new RegExp(`(${pattern})`, "gi"));
 
   if (parts.length === 1) return <>{text}</>;
+
+  const className =
+    variant === "accent" ? "mark-hotel mark-hotel-accent" : "mark-hotel";
 
   return (
     <>
       {parts.map((part, i) =>
         i % 2 === 1 ? (
-          <em key={i} className="mark-hotel">
+          <em key={i} className={className}>
             {part}
           </em>
         ) : (
@@ -60,8 +76,14 @@ function markUp(text: string, pattern: string) {
 }
 
 /** Resalta "tu hotel" en cualquier cadena de copy. */
-export function HotelText({ children }: { children: string }) {
-  return markUp(children, TU_HOTEL);
+export function HotelText({
+  children,
+  variant = "underline",
+}: {
+  children: string;
+  variant?: MarkVariant;
+}) {
+  return markUp(children, TU_HOTEL, variant);
 }
 
 /**
@@ -71,9 +93,11 @@ export function HotelText({ children }: { children: string }) {
 export function MarkPhrase({
   children,
   phrase,
+  variant = "underline",
 }: {
   children: string;
   phrase: string;
+  variant?: MarkVariant;
 }) {
-  return markUp(children, escapeRegExp(phrase));
+  return markUp(children, escapeRegExp(phrase), variant);
 }

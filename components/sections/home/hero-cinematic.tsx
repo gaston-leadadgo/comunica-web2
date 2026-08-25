@@ -104,7 +104,11 @@ export function HeroCinematic() {
         <div ref={scope} className="mx-auto max-w-[76rem] text-center">
           <h1 className="text-display-hero">
             <span data-line className="block text-balance">
-              <HotelText>{hero.titleLine1}</HotelText>
+              {/* `accent`: aqui "tu hotel" va en el mismo cyan que la segunda
+                  linea y el trazo se dibuja al entrar. Es la unica aparicion de
+                  la expresion en toda la web que cambia de color, y solo porque
+                  el fondo es papel conocido. Ver `.mark-hotel-accent`. */}
+              <HotelText variant="accent">{hero.titleLine1}</HotelText>
             </span>{" "}
             <span data-line className="mt-1 block text-balance text-cyan-strong">
               {hero.titleLine2}

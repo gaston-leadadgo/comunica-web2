@@ -285,6 +285,48 @@
   [data-tone="dark"] .mark-hotel {
     box-shadow: inset 0 -0.3em 0 rgb(0 159 227 / 0.42);
   }
+
+  /* Variante de acento. SOLO para el titular del hero, y por eso es una
+     variante y no un cambio de la clase base: alli el fondo es conocido (papel)
+     y "tu hotel" tiene que igualar el cyan de la segunda linea del titular, que
+     es `--color-cyan-strong` (#0089C4, 3,91:1 sobre blanco - el minimo del
+     token, valido porque el titular es bold y mide 56px). En el resto de la web
+     la clase base sigue sin tocar el color, que es lo que la hace segura sobre
+     navy y sobre el degradado.
+
+     El trazo se pinta con `background-image` en lugar del `box-shadow` de la
+     base porque es lo unico que permite animar el ancho: `background-size` si
+     interpola, `box-shadow` no. Contrapartida asumida: un `background` se
+     partiria al final de linea, pero "tu hotel" va en mitad de la primera linea
+     del titular, que ademas viene con el corte forzado desde el copy.
+
+     Con `prefers-reduced-motion` el bloque del final del archivo colapsa la
+     duracion a 0,01 ms; como el `fill-mode` es `forwards`, el trazo aparece
+     entero de golpe en vez de no aparecer. */
+  .mark-hotel-accent {
+    color: var(--color-cyan-strong);
+    box-shadow: none;
+    background-image: linear-gradient(
+      rgb(0 159 227 / 0.3),
+      rgb(0 159 227 / 0.3)
+    );
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 0.3em;
+    /* `ease-out` y no `--ease-out-expo`: con la expo el trazo llega al 97 % en la
+       mitad de la duracion, asi que no se ve dibujar, se ve aparecer de golpe.
+       La expo esta bien para mover un bloque entero; para un gesto de subrayador
+       hace falta una curva que reparta el recorrido. */
+    animation: comunica-underline-draw 620ms ease-out 520ms forwards;
+  }
+}
+
+/* El trazo de "tu hotel" en el hero, dibujado de izquierda a derecha. Va detras
+   del titular, que entra con GSAP: el retardo de 520 ms lo encadena justo
+   despues de que la primera linea acabe de subir. */
+@keyframes comunica-underline-draw {
+  from { background-size: 0 0.3em; }
+  to { background-size: 100% 0.3em; }
 }
 
 /* ============================================================================

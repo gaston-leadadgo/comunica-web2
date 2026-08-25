@@ -1,6 +1,5 @@
 "use client";
 
-import { QrMotif } from "@/components/brand/qr-motif";
 import { SIZES, SmartImage } from "@/components/media/smart-image";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/section";
@@ -108,12 +107,17 @@ export function ExtensionBlock() {
 
           {/* Columna visual: foto, secuencia y acciones */}
           <div ref={scope} className="flex min-w-0 flex-col gap-4">
-            {/* El QR va compuesto por CSS sobre la foto, no generado dentro de
-                ella. Es el patron Tier B del plan: la fotografia aporta el
-                objeto fisico (el soporte de la mesilla) y el codigo se pone
-                encima como vector. Un QR "dibujado" por un modelo de imagen
-                sale como una mancha de ruido y delata el montaje al instante;
-                ademas, asi el motivo se mantiene nitido en retina. */}
+            {/* El QR viene IMPRESO dentro de la fotografia, en la tarjeta de la
+                mesilla. Decision de cliente, y cambia el planteamiento anterior:
+                antes se componia por CSS encima de una tarjeta en blanco (patron
+                Tier B). Se retira ese montaje porque el cliente quiere ver el
+                codigo como parte de la escena y no como una pegatina flotando
+                sobre la foto.
+                Contrapartida a vigilar al generar la imagen: un modelo de
+                difusion no produce un QR escaneable, solo un patron que lo
+                parece. Sirve como fotografia de producto, no como codigo real;
+                si en algun momento hace falta que sea escaneable, hay que volver
+                al vector compuesto (`QrMotif` sigue en el repo). */}
             <div className="d-crop-r relative">
               <SmartImage
                 image="home-extension-qr-room"
@@ -121,13 +125,6 @@ export function ExtensionBlock() {
                 decorative
                 wrapperClassName="h-full"
               />
-
-              <div className="absolute top-1/2 left-[8%] w-[26%] max-w-[9rem] -translate-y-1/2 rounded-lg bg-white p-2.5 shadow-md sm:left-[10%]">
-                <QrMotif className="w-full" />
-                <p className="mt-1.5 text-center font-mono text-[0.5rem] leading-tight tracking-[0.08em] text-ink uppercase">
-                  {m.qrAction}
-                </p>
-              </div>
             </div>
 
             {/* Los tres pasos, en tira horizontal */}

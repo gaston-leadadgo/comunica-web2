@@ -59,7 +59,7 @@ Nano Banana no escribe texto legible: un dashboard generado por IA con palabras 
 | 3 | `home-profile-consolidado-grupo` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 4 | `home-profile-gestionado-cadena` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 5 | `home-profile-especializado-proyecto` | Home | Apoyo de seccion | 4:3 | 1400x1050 | B |
-| 6 | `home-iandrea-phone-plate` | Home | Mockup de producto | 4:3 | 1600x1200 | B · plancha |
+| 6 | `home-iandrea-phone-plate` | Home | Apoyo de seccion | 4:3 | 1600x1200 | B |
 | 7 | `home-extension-qr-room` | Home | Apoyo de seccion | 16:9 | 2400x1350 | A |
 | 8 | `home-differentials-engineer-hands` | Home | Apoyo de seccion | 4:5 | 1400x1750 | A |
 | 9 | `home-catalog-keycard-still` | Home | Bodegon editorial | 4:5 | 1400x1750 | A |
@@ -91,7 +91,7 @@ House style for this whole image set, follow it exactly: photograph it as if a s
 #### 1. `home-hero-lobby-umbral`
 
 - **Archivo:** `public/images/home/home-hero-lobby-umbral.webp`
-- **Donde va:** Home / hero cinematográfico, fondo a sangre al 26 % bajo el lavado radial
+- **Donde va:** Home / hero cinematográfico, fondo a sangre al 38 % bajo el lavado radial
 - **Rol:** Hero de pagina
 - **Tamano:** 2752 x 1536 px (16:9)
 - **Bloque de estilo:** A
@@ -157,15 +157,15 @@ A close night photograph of a well-organised server rack in the technical room o
 #### 6. `home-iandrea-phone-plate`  **← ANCLA DE ESTILO, generar primero**
 
 - **Archivo:** `public/images/home/home-iandrea-phone-plate.webp`
-- **Donde va:** Home / bloque iAndrea, columna derecha
-- **Rol:** Mockup de producto
+- **Donde va:** Home / bloque iAndrea, columna derecha. Sección navy, así que la foto entra por gradación B y se recorta con `rounded-shield`.
+- **Rol:** Apoyo de seccion
 - **Tamano:** 1600 x 1200 px (4:3)
 - **Bloque de estilo:** B
-- **Plancha Tier B:** la pantalla debe salir en navy plano y sin contenido. La interfaz real se compone encima por CSS.
-- **Zona segura:** La pantalla del móvil, limpia, frontal y en navy plano: encima se compone la interfaz de voz real por CSS.
+- **Zona segura:** El teléfono manda y va en el tercio inferior. Su pantalla NO debe leerse: girada lo justo para que no se distinga nada, porque cualquier interfaz o rótulo generado sale en jerigonza. La mitad superior queda oscura y sin detalle.
+- **Alt (ya redactado):** Mostrador de recepción vacío de noche con el teléfono atendiendo una llamada
 
 ```text
-A close night-time photograph of a modern smartphone lying face up and slightly angled on the wooden counter of a small hotel reception desk during the late shift, screen switched on but displaying nothing except one perfectly flat, evenly lit solid deep navy #003057 rectangle with absolutely no icons, no text, no interface elements and no status bar - a clean empty screen, because an interface will be composited onto it later. The phone screen must be sharp, unobstructed, rectangular and free of glare or reflections. Around it, the reception desk is dark: worn wood, a reception bell, the soft out-of-focus glow of a desk lamp behind, and a faint electric cyan #009FE3 rim light along the top edge of the phone. In the deep background, far out of focus and unrecognisable, the silhouette of someone sitting at the desk beyond. No hands touching the phone, no faces. Intimate, quiet, the hotel at one in the morning.
+A night-time photograph of the reception desk of a small independent European hotel at one in the morning, with nobody behind it. We look along the counter from the guest side at eye level, close enough that a slim black IP desk phone sitting on the dark stone counter is the clear subject, placed in the lower third of the frame. The phone is in the middle of a call and it is handling that call entirely on its own: the handset is still resting in its cradle, the speaker grille and the keypad are softly backlit, and two small indicator lights glow electric cyan #009FE3, one of them the active-line light. Its small display is lit and spills a soft cyan wash across the stone counter and up the wooden panel behind it, but the display is angled just far enough away from the lens that absolutely nothing on it can be read. Behind the counter the staff chair is empty and pushed back at an angle with a cardigan left over the backrest, and the wooden key wall is in deep shadow. Further back, the glazed entrance shows an empty wet street at night with two distant cool streetlights. Everything else is near-black #1D1D1B and deep navy #003057, lit only by the phone, one dimmed picture light and the street outside. Nobody is anywhere in the frame and no other light source competes with the phone. The photograph has to say one thing without needing a caption: the call is being answered, and there is no one there answering it. Do not add any robot, mascot, humanoid figure, chat bubble, speech bubble, sound-wave or waveform graphic, circuit-board pattern, glowing network diagram or holographic overlay of any kind - the only thing in this image that suggests intelligence is a telephone working a call by itself in an empty room. Restrained, quiet, faintly uncanny: the hotel running itself on the night shift.
 ```
 
 #### 7. `home-extension-qr-room`
@@ -175,11 +175,11 @@ A close night-time photograph of a modern smartphone lying face up and slightly 
 - **Rol:** Apoyo de seccion
 - **Tamano:** 2400 x 1350 px (16:9)
 - **Bloque de estilo:** A
-- **Zona segura:** El soporte de la mesilla debe quedar limpio y sin ningún código impreso: el QR se compone después. Encuadre panorámico, no vertical.
-- **Alt (ya redactado):** Mesilla de habitación de hotel con un pequeño soporte de sobremesa en blanco
+- **Zona segura:** El QR va IMPRESO en la tarjeta dentro de la propia foto (decisión de cliente, cambia el planteamiento anterior de componerlo por CSS). La cara de la tarjeta tiene que quedar frontal, plana, nítida y sin reflejos, y el código ocuparla casi entera. Encuadre panorámico, no vertical.
+- **Alt (ya redactado):** Mesilla de habitación de hotel con un soporte de sobremesa con código QR
 
 ```text
-A wide horizontal photograph of the bedside table of a calm, modest hotel room in the late afternoon, shot from a shallow angle just above the surface so the composition is panoramic rather than tall. On the table: a small blank white acrylic tent card standing upright, completely empty with no printing, no code and no lettering of any kind, because a graphic will be composited onto it later; beside it a smartphone lying face down, and a slim reading lamp casting warm light. Behind, the corner of a crisply made bed and a warm off-white wall. Soft golden daylight from a window out of frame on the left, deep navy in the shadows. The old room telephone sits at the far right edge of the frame, its cable unplugged and coiled beside it. Nobody in frame. Ordinary, well kept, real: a room in a working hotel, not a suite in a brochure.
+A wide horizontal photograph of the bedside table of a calm, modest hotel room in the late afternoon, shot from a shallow angle just above the surface so the composition is panoramic rather than tall. The subject of the photograph is a small white acrylic tent card standing upright on the table, turned so that its front face is square to the lens and fully visible, and on that face, printed large and perfectly flat, a black and white QR code: a dense square matrix of small black modules on white, with the three characteristic solid square finder patterns in its top-left, top-right and bottom-left corners and a clean white quiet zone around the edge. The code fills most of the card face and must be sharp, high in contrast, unblurred, undistorted and free of glare or reflections. It is printed on the card as ink on plastic - not glowing, not projected, not floating in the air. Beside the card a smartphone lies face down, and a slim reading lamp casts warm light. Behind, the corner of a crisply made bed and a warm off-white wall. Soft golden daylight from a window out of frame on the left, deep navy in the shadows. The old room telephone sits at the far right edge of the frame, its cable unplugged and coiled beside it. Nobody in frame. Ordinary, well kept, real: a room in a working hotel, not a suite in a brochure. One explicit exception to the house style rule that forbids graphics: this square black and white code pattern is required and must be clearly visible. Apart from it there is still absolutely no text, no lettering, no numbers, no logos and no watermarks anywhere in the image.
 ```
 
 #### 8. `home-differentials-engineer-hands`

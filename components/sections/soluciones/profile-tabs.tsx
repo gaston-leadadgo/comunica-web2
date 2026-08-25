@@ -114,8 +114,15 @@ export function SolucionesProfileTabs() {
                   aria-controls={selected ? `${baseId}-panel-${p.id}` : undefined}
                   tabIndex={selected ? 0 : -1}
                   onClick={() => setActive(i)}
+                  // `overflow-hidden`: recorta el indicador a la silueta
+                  // redondeada. Sin el, la barra de 2px arrancaba en el borde
+                  // exacto de la caja (x=0) mientras que con radio de 20px el
+                  // fondo navy a la altura de sus extremos empieza en x=1,67px,
+                  // asi que los remates asomaban fuera de la curva y rompian el
+                  // redondeo. El `outline` del foco no se recorta con
+                  // `overflow`, asi que el anillo de foco no se ve afectado.
                   className={cn(
-                    "relative min-w-0 rounded-lg px-4 py-3.5 text-left transition-colors lg:px-5 lg:py-4",
+                    "relative min-w-0 overflow-hidden rounded-lg px-4 py-3.5 text-left transition-colors lg:px-5 lg:py-4",
                     selected
                       ? "bg-navy text-white"
                       : "bg-paper text-fg hover:bg-paper-warm-2",
@@ -131,10 +138,17 @@ export function SolucionesProfileTabs() {
                   >
                     {p.size}
                   </span>
+                  {/* Indicador de pestana activa. En escritorio es un filo
+                      vertical en el borde izquierdo, y su recorrido arranca en
+                      `inset-y-6` (24px) —no en 12px— para que los dos extremos
+                      caigan dentro del tramo RECTO del borde: con radio de 20px,
+                      cualquier cosa por encima de esa cota queda ya en la curva.
+                      Asi el filo se lee limpio incluso antes de que el
+                      `overflow-hidden` del boton lo recorte. */}
                   {selected ? (
                     <span
                       aria-hidden="true"
-                      className="bg-brand-gradient absolute inset-x-5 bottom-1.5 h-[2px] rounded-full lg:inset-x-auto lg:inset-y-3 lg:left-0 lg:h-auto lg:w-[2px]"
+                      className="bg-brand-gradient absolute inset-x-5 bottom-1.5 h-[2px] rounded-full lg:inset-x-auto lg:inset-y-6 lg:left-0 lg:h-auto lg:w-[2px]"
                     />
                   ) : null}
                 </button>
