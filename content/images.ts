@@ -85,8 +85,8 @@ export const images = {
     key: "home-hero-lobby-umbral",
     src: "/images/home/home-hero-lobby-umbral.webp",
     alt: "",
-    width: 2560,
-    height: 1440,
+    width: 2752,
+    height: 1536,
     usage:
       "Home / hero cinematográfico, fondo a sangre al 26 % bajo el lavado radial",
     role: "hero",

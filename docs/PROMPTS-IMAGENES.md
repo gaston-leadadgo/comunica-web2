@@ -54,7 +54,7 @@ Nano Banana no escribe texto legible: un dashboard generado por IA con palabras 
 
 | # | Archivo | Pagina | Rol | Ratio | Px | Bloque |
 |---|---|---|---|---|---|---|
-| 1 | `home-hero-lobby-umbral` | Home | Hero de pagina | 16:9 | 2560x1440 | A |
+| 1 | `home-hero-lobby-umbral` | Home | Hero de pagina | 16:9 | 2752x1536 | A |
 | 2 | `home-profile-conectado-independiente` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 3 | `home-profile-consolidado-grupo` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 4 | `home-profile-gestionado-cadena` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
@@ -93,7 +93,7 @@ House style for this whole image set, follow it exactly: photograph it as if a s
 - **Archivo:** `public/images/home/home-hero-lobby-umbral.webp`
 - **Donde va:** Home / hero cinematográfico, fondo a sangre al 26 % bajo el lavado radial
 - **Rol:** Hero de pagina
-- **Tamano:** 2560 x 1440 px (16:9)
+- **Tamano:** 2752 x 1536 px (16:9)
 - **Bloque de estilo:** A
 - **Zona segura:** Toda la franja central debe ser tranquila y de bajo detalle: encima va el titular centrado, el subtítulo y dos botones. Es un fondo, no una foto protagonista. Las señales que identifican la recepción (casillero de llaves, carro de equipajes, puertas de ascensor, butacas) van en los tercios laterales y en el inferior, nunca en el centro.
 
