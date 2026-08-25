@@ -185,15 +185,15 @@ export const images = {
     key: "home-iandrea-voice-ai",
     src: "/images/home/home-iandrea-voice-ai.webp",
     alt: "Recepción de hotel con la interfaz de voz de iAndrea atendiendo llamadas",
-    width: 1600,
-    height: 1200,
+    width: 1448,
+    height: 1086,
     usage:
       "Home / bloque iAndrea, columna derecha. Es la IMAGEN DE PRODUCTO de la sección que explica qué es iAndrea, así que va por gradación C y no por la serie fotográfica.",
     role: "mockup",
     grading: "C",
     safeArea:
-      "Ninguna zona reservada: no se compone nada encima por CSS. Lo que sí es crítico es que NINGUNA pantalla lleve texto ni logotipo — saldría en jerigonza. El wordmark de iAndrea, si se quiere, se compone después en diseño.",
-    ready: false,
+      "Ninguna zona reservada: no se compone nada encima por CSS. La generación final incluyó el wordmark \"iAndrea\" y la mascota bien renderizados —no era lo esperado, el prompt los prohibía por el riesgo de jerigonza, pero salieron correctos— así que no hace falta componer nada encima.",
+    ready: true,
     prompt: `A bright, modern, openly technological product image of an AI voice assistant working at the reception desk of a hotel, shot in landscape 4:3. The real, photographed half of the picture: an open laptop and a slim black IP desk phone standing on the pale stone reception counter in the lower right of the frame, and behind them, softly out of focus, the warm daylit lobby of a busy hotel with several guests waiting at the counter, reduced to gentle blurred shapes so that no face is identifiable and nobody is looking towards the camera. The graphic half, and this is the real subject: rising out of the laptop screen and floating in the air above the counter, a luminous electric cyan #009FE3 interface made of clean emissive geometry - a glowing cyan orb at its centre standing for the voice of the assistant, concentric voice rings radiating outward from it, a bright audio waveform curving across the screen, three or four rounded conversation bubbles floating at different depths, and thin bright connection lines fanning out from the orb to a handful of simple glowing outline icons that read unmistakably as a telephone handset, a calendar, a small clock and a globe. The interface elements are crisp, thin-stroked, softly glowing, arranged with generous empty space between them and clearly layered in front of the scene, like a premium enterprise software campaign visual. Deep navy #003057 fills the depth behind the graphics and pools in the shadows, cyan carries every glow and specular, the counter and the lobby stay warm off-white and neutral warm grey, the hardware is near-black. The image has to say, at a glance and with no caption at all: an artificial intelligence is answering this hotel's calls, in many languages, at the same time, while the front desk gets on with the guests in front of it. Absolutely no text, no lettering, no words, no numbers, no logos and no wordmarks anywhere, on the screens included. No chrome humanoid robot, no matrix code, no wireframe globe, no circuit-board wallpaper. Bright, confident, premium, optimistic.`,
   },
 

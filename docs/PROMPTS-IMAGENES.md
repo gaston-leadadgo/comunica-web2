@@ -61,7 +61,7 @@ Nano Banana no escribe texto legible: un dashboard generado por IA con palabras 
 | 3 | `home-profile-consolidado-grupo` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 4 | `home-profile-gestionado-cadena` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 5 | `home-profile-especializado-proyecto` | Home | Apoyo de seccion | 4:3 | 1400x1050 | B |
-| 6 | `home-iandrea-voice-ai` | Home | Mockup de producto | 4:3 | 1600x1200 | C |
+| 6 | `home-iandrea-voice-ai` | Home | Mockup de producto | 4:3 | 1448x1086 | C |
 | 7 | `home-extension-qr-room` | Home | Apoyo de seccion | 16:9 | 2752x1536 | A |
 | 8 | `home-differentials-engineer-hands` | Home | Apoyo de seccion | 4:5 | 1400x1750 | A |
 | 9 | `home-catalog-keycard-still` | Home | Bodegon editorial | 4:5 | 1400x1750 | A |
@@ -169,9 +169,9 @@ A close night photograph of a well-organised server rack in the technical room o
 - **Archivo:** `public/images/home/home-iandrea-voice-ai.webp`
 - **Donde va:** Home / bloque iAndrea, columna derecha. Es la IMAGEN DE PRODUCTO de la sección que explica qué es iAndrea, así que va por gradación C y no por la serie fotográfica.
 - **Rol:** Mockup de producto
-- **Tamano:** 1600 x 1200 px (4:3)
+- **Tamano:** 1448 x 1086 px (4:3)
 - **Bloque de estilo:** C
-- **Zona segura:** Ninguna zona reservada: no se compone nada encima por CSS. Lo que sí es crítico es que NINGUNA pantalla lleve texto ni logotipo — saldría en jerigonza. El wordmark de iAndrea, si se quiere, se compone después en diseño.
+- **Zona segura:** Ninguna zona reservada: no se compone nada encima por CSS. La generación final incluyó el wordmark "iAndrea" y la mascota bien renderizados —no era lo esperado, el prompt los prohibía por el riesgo de jerigonza, pero salieron correctos— así que no hace falta componer nada encima.
 - **Alt (ya redactado):** Recepción de hotel con la interfaz de voz de iAndrea atendiendo llamadas
 
 ```text
