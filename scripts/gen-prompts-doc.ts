@@ -78,7 +78,11 @@ w();
 w("## Como usar este documento");
 w();
 w(
-  "Cada generacion es **[PROMPT ESPECIFICO] + [BLOQUE DE ESTILO]**, pegados uno detras del otro. Cada ficha indica que bloque le toca: **A** (lado huesped, secciones claras) o **B** (lado tecnico, secciones oscuras).",
+  "Cada generacion es **[PROMPT ESPECIFICO] + [BLOQUE DE ESTILO]**, pegados uno detras del otro. Cada ficha indica que bloque le toca: **A** (lado huesped, secciones claras), **B** (lado tecnico, secciones oscuras) o **C** (imagen de producto de iAndrea).",
+);
+w();
+w(
+  "**El bloque C es la excepcion deliberada de todo el documento.** Las reglas de direccion de arte de arriba describen la serie fotografica, donde la tecnologia es incidental para que la web no parezca de una telco. En el bloque que explica que es iAndrea esa regla juega en contra: quien llega ahi quiere ver el producto. La gradacion C es abiertamente tecnologica —interfaz de voz luminosa, ondas, burbujas de conversacion, iconos conectados— y esta alineada con las creatividades que iAndrea ya usa en campaña. **A las imagenes C no se les aplican las tres reglas ni el checklist de la serie**, solo la paleta de marca y la prohibicion de texto.",
 );
 w();
 w(
@@ -109,7 +113,7 @@ w(
   "6. **Hoja de contacto antes de integrar.** Monta todas en una sola hoja de 6x6 y mirala al 25 %. Si alguna salta, regenerala. Ninguna imagen se juzga aislada.",
 );
 w();
-w("### Checklist por imagen");
+w("### Checklist por imagen (solo bloques A y B)");
 w();
 w("- Tiene **exactamente un** acento cyan, y existe fisicamente en la escena.");
 w("- **Nadie** mira a camara, y nadie sonrie a camara.");
@@ -166,6 +170,16 @@ w("### Bloque B - lado tecnico (secciones oscuras)");
 w();
 w("```text");
 w(HOUSE_STYLE.B);
+w("```");
+w();
+w("### Bloque C - imagen de producto de iAndrea");
+w();
+w(
+  "Solo para la ficha de iAndrea. Aqui la tecnologia **es** el sujeto, a proposito. No se combina con los bloques A ni B.",
+);
+w();
+w("```text");
+w(HOUSE_STYLE.C);
 w("```");
 w();
 w("---");

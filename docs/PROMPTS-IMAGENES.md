@@ -18,13 +18,15 @@ El publico objetivo son **dueños y gestores de hoteles pequeños**. Las imagene
 
 ## Como usar este documento
 
-Cada generacion es **[PROMPT ESPECIFICO] + [BLOQUE DE ESTILO]**, pegados uno detras del otro. Cada ficha indica que bloque le toca: **A** (lado huesped, secciones claras) o **B** (lado tecnico, secciones oscuras).
+Cada generacion es **[PROMPT ESPECIFICO] + [BLOQUE DE ESTILO]**, pegados uno detras del otro. Cada ficha indica que bloque le toca: **A** (lado huesped, secciones claras), **B** (lado tecnico, secciones oscuras) o **C** (imagen de producto de iAndrea).
+
+**El bloque C es la excepcion deliberada de todo el documento.** Las reglas de direccion de arte de arriba describen la serie fotografica, donde la tecnologia es incidental para que la web no parezca de una telco. En el bloque que explica que es iAndrea esa regla juega en contra: quien llega ahi quiere ver el producto. La gradacion C es abiertamente tecnologica —interfaz de voz luminosa, ondas, burbujas de conversacion, iconos conectados— y esta alineada con las creatividades que iAndrea ya usa en campaña. **A las imagenes C no se les aplican las tres reglas ni el checklist de la serie**, solo la paleta de marca y la prohibicion de texto.
 
 El bloque de estilo se pega **literal, sin editar ni resumir**. Cualquier reescritura introduce deriva y la serie deja de parecer del mismo fotografo.
 
 ### Orden de trabajo, importa
 
-1. **Genera primero las dos anclas** y solo esas: `home-profile-conectado-independiente` (bloque A) y `home-iandrea-phone-plate` (bloque B). Iteralas hasta que el grading sea exactamente el que quieres. Guardalas como `_style-anchor-light.png` y `_style-anchor-dark.png`, **fuera** de la carpeta del proyecto. Es la unica decision irreversible de todo el bloque de imagenes.
+1. **Genera primero las dos anclas** y solo esas: `home-profile-conectado-independiente` (bloque A) y `home-profile-especializado-proyecto` (bloque B). Iteralas hasta que el grading sea exactamente el que quieres. Guardalas como `_style-anchor-light.png` y `_style-anchor-dark.png`, **fuera** de la carpeta del proyecto. Es la unica decision irreversible de todo el bloque de imagenes.
 2. **Adjunta el ancla correspondiente en todas las generaciones siguientes** y anade esta frase al final del prompt, despues del bloque de estilo:
 
    > Match the colour grading, contrast curve, light quality, level of desaturation, skin rendering and overall mood of the attached reference image as closely as possible. Treat it as the same photographer, the same camera, the same day, the same post-production.
@@ -34,7 +36,7 @@ El bloque de estilo se pega **literal, sin editar ni resumir**. Cualquier reescr
 5. **Exporta a WebP con calidad 82** y respeta exactamente el nombre de archivo de cada ficha. Colocalas en `public/images/<pagina>/`.
 6. **Hoja de contacto antes de integrar.** Monta todas en una sola hoja de 6x6 y mirala al 25 %. Si alguna salta, regenerala. Ninguna imagen se juzga aislada.
 
-### Checklist por imagen
+### Checklist por imagen (solo bloques A y B)
 
 - Tiene **exactamente un** acento cyan, y existe fisicamente en la escena.
 - **Nadie** mira a camara, y nadie sonrie a camara.
@@ -59,8 +61,8 @@ Nano Banana no escribe texto legible: un dashboard generado por IA con palabras 
 | 3 | `home-profile-consolidado-grupo` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 4 | `home-profile-gestionado-cadena` | Home | Apoyo de seccion | 4:3 | 1400x1050 | A |
 | 5 | `home-profile-especializado-proyecto` | Home | Apoyo de seccion | 4:3 | 1400x1050 | B |
-| 6 | `home-iandrea-phone-plate` | Home | Apoyo de seccion | 4:3 | 1600x1200 | B |
-| 7 | `home-extension-qr-room` | Home | Apoyo de seccion | 16:9 | 2400x1350 | A |
+| 6 | `home-iandrea-voice-ai` | Home | Mockup de producto | 4:3 | 1600x1200 | C |
+| 7 | `home-extension-qr-room` | Home | Apoyo de seccion | 16:9 | 2752x1536 | A |
 | 8 | `home-differentials-engineer-hands` | Home | Apoyo de seccion | 4:5 | 1400x1750 | A |
 | 9 | `home-catalog-keycard-still` | Home | Bodegon editorial | 4:5 | 1400x1750 | A |
 | 10 | `og-plate-dark` | Open Graph | Plancha Open Graph | 40:21 | 1200x630 | B |
@@ -80,6 +82,14 @@ House style for this whole image set, follow it exactly: photograph it as if a s
 
 ```text
 House style for this whole image set, follow it exactly: photograph it as if a single documentary photographer shot the entire series on a full-frame camera with a 40mm lens, available light only, at night or in a dim interior, no studio flash, no lens flare, no bokeh balls. Restrained European palette limited to near-black #1D1D1B for the blacks (never pure black), deep navy #003057 in the midtones, and electric cyan #009FE3 for speculars, light trails and status glows. No green, no magenta, no yellow. Medium-high contrast with no clipped highlights, fine natural film grain equivalent to ISO 800. Photorealistic, calm, sober, precise, quietly expensive, European. When a person appears they are the owner or manager of a small independent hotel, between forty and sixty years old, in real working clothes rather than corporate suits, caught mid-task on a late shift; natural unposed expressions are welcome but nobody ever looks at the camera and nobody smiles at it. At most two people in frame. Absolutely avoid: stock-photo poses, people smiling at the camera, call-center headsets, handshakes, models who look like models, holiday and brochure imagery of any kind including swimming pools, beaches, sunsets and cocktails, floating holographic interfaces, glowing wireframe globes, world maps with connection lines, hexagon patterns, printed circuit boards, concentric signal waves, drawn clouds, 3D padlocks, teal-and-orange colour grading, and any text, lettering, numbers, logos or watermarks anywhere in the image.
+```
+
+### Bloque C - imagen de producto de iAndrea
+
+Solo para la ficha de iAndrea. Aqui la tecnologia **es** el sujeto, a proposito. No se combina con los bloques A ni B.
+
+```text
+House style for this image, follow it exactly. This is the PRODUCT image of iAndrea, the voice AI agent, so unlike the rest of this image set it is openly, deliberately and unapologetically technological: technology is THE SUBJECT here, not an incidental detail. Premium enterprise-software campaign photography combined with clean luminous interface graphics: real photographed hardware and real materials, with crisp emissive interface elements rendered in front of and on the screens. Sharp, bright, confident, optimistic. Brand palette, strictly enforced: deep navy #003057 for the dark fields and the sense of depth, electric cyan #009FE3 for every glow, light trail, interface stroke and specular highlight, warm off-white #FAFAF8 and neutral warm grey #F1EFEC for the real-world surfaces, near-black #1D1D1B for the hardware. No green, no magenta, no purple, no orange, no teal-and-orange grading. All of the following are welcome, expected and encouraged: glowing voice waveforms, concentric voice rings radiating from a speaking source, luminous speech and conversation bubbles, thin bright connection lines linking simple glowing icons, soft holographic overlays floating just above a screen, delicate circuit-like tracery, and a luminous cyan orb or halo standing for the voice assistant itself. Render them as clean geometry with thin strokes, a soft outer glow and generous empty space around each element - luminous and precise, never a dense cluttered mess. What is still absolutely forbidden, and this one is not a style preference: any text, lettering, words, numbers, logos, wordmarks or watermarks anywhere in the image, including on every screen and display. An image model renders lettering as gibberish, and a garbled brand name on a laptop screen destroys the credibility of the whole page; the iAndrea wordmark and any real copy are composited afterwards in design software. Also avoid: cheap sci-fi clutter, dense circuit-board wallpaper, wireframe globes, world maps with connection lines, hexagon grids, falling matrix code, lens flares, chrome humanoid androids, and stock-photo staff grinning at the camera. Photorealistic where it is photographic, immaculate where it is graphic, quietly expensive, European.
 ```
 
 ---
@@ -141,7 +151,7 @@ A photograph of two people who run a small European hotel group of a handful of 
 A photograph looking down the centre of a corridor in a mid-size European chain hotel, shot with a long lens so the identical doors repeat rhythmically into the distance. In the middle distance, walking away from the camera and slightly out of the centre, the operations manager: a man in his fifties in a plain jacket, one hand carrying a folder, glancing sideways at a room door as he passes. He is small in the frame; the repetition of the corridor is as much the subject as he is. Warm off-white walls, dark patterned carpet, brushed metal room plates catching the same highlight on every door, and a flush white ceiling access point in the foreground with one small electric cyan #009FE3 status light. Cool even daylight from a window at the far end. His back is to us, no face visible.
 ```
 
-#### 5. `home-profile-especializado-proyecto`
+#### 5. `home-profile-especializado-proyecto`  **← ANCLA DE ESTILO, generar primero**
 
 - **Archivo:** `public/images/home/home-profile-especializado-proyecto.webp`
 - **Donde va:** Home / acordeón de perfiles, panel Proyecto Especializado
@@ -154,18 +164,18 @@ A photograph looking down the centre of a corridor in a mid-size European chain 
 A close night photograph of a well-organised server rack in the technical room of a small hotel, where most of the equipment is older and slightly dusty but perfectly cabled, and exactly one module in the middle is visibly newer, cleaner and brighter, with a row of electric cyan #009FE3 link lights. Everything else is deep navy and near-black, lit only by the equipment LEDs. The point of the photograph is that only one piece was replaced: the rest keeps working. No people, no labels, no lettering. This is the one image in the series with no person in it, and it should feel like the quiet inside of the building.
 ```
 
-#### 6. `home-iandrea-phone-plate`  **← ANCLA DE ESTILO, generar primero**
+#### 6. `home-iandrea-voice-ai`
 
-- **Archivo:** `public/images/home/home-iandrea-phone-plate.webp`
-- **Donde va:** Home / bloque iAndrea, columna derecha. Sección navy, así que la foto entra por gradación B y se recorta con `rounded-shield`.
-- **Rol:** Apoyo de seccion
+- **Archivo:** `public/images/home/home-iandrea-voice-ai.webp`
+- **Donde va:** Home / bloque iAndrea, columna derecha. Es la IMAGEN DE PRODUCTO de la sección que explica qué es iAndrea, así que va por gradación C y no por la serie fotográfica.
+- **Rol:** Mockup de producto
 - **Tamano:** 1600 x 1200 px (4:3)
-- **Bloque de estilo:** B
-- **Zona segura:** El teléfono manda y va en el tercio inferior. Su pantalla NO debe leerse: girada lo justo para que no se distinga nada, porque cualquier interfaz o rótulo generado sale en jerigonza. La mitad superior queda oscura y sin detalle.
-- **Alt (ya redactado):** Mostrador de recepción vacío de noche con el teléfono atendiendo una llamada
+- **Bloque de estilo:** C
+- **Zona segura:** Ninguna zona reservada: no se compone nada encima por CSS. Lo que sí es crítico es que NINGUNA pantalla lleve texto ni logotipo — saldría en jerigonza. El wordmark de iAndrea, si se quiere, se compone después en diseño.
+- **Alt (ya redactado):** Recepción de hotel con la interfaz de voz de iAndrea atendiendo llamadas
 
 ```text
-A night-time photograph of the reception desk of a small independent European hotel at one in the morning, with nobody behind it. We look along the counter from the guest side at eye level, close enough that a slim black IP desk phone sitting on the dark stone counter is the clear subject, placed in the lower third of the frame. The phone is in the middle of a call and it is handling that call entirely on its own: the handset is still resting in its cradle, the speaker grille and the keypad are softly backlit, and two small indicator lights glow electric cyan #009FE3, one of them the active-line light. Its small display is lit and spills a soft cyan wash across the stone counter and up the wooden panel behind it, but the display is angled just far enough away from the lens that absolutely nothing on it can be read. Behind the counter the staff chair is empty and pushed back at an angle with a cardigan left over the backrest, and the wooden key wall is in deep shadow. Further back, the glazed entrance shows an empty wet street at night with two distant cool streetlights. Everything else is near-black #1D1D1B and deep navy #003057, lit only by the phone, one dimmed picture light and the street outside. Nobody is anywhere in the frame and no other light source competes with the phone. The photograph has to say one thing without needing a caption: the call is being answered, and there is no one there answering it. Do not add any robot, mascot, humanoid figure, chat bubble, speech bubble, sound-wave or waveform graphic, circuit-board pattern, glowing network diagram or holographic overlay of any kind - the only thing in this image that suggests intelligence is a telephone working a call by itself in an empty room. Restrained, quiet, faintly uncanny: the hotel running itself on the night shift.
+A bright, modern, openly technological product image of an AI voice assistant working at the reception desk of a hotel, shot in landscape 4:3. The real, photographed half of the picture: an open laptop and a slim black IP desk phone standing on the pale stone reception counter in the lower right of the frame, and behind them, softly out of focus, the warm daylit lobby of a busy hotel with several guests waiting at the counter, reduced to gentle blurred shapes so that no face is identifiable and nobody is looking towards the camera. The graphic half, and this is the real subject: rising out of the laptop screen and floating in the air above the counter, a luminous electric cyan #009FE3 interface made of clean emissive geometry - a glowing cyan orb at its centre standing for the voice of the assistant, concentric voice rings radiating outward from it, a bright audio waveform curving across the screen, three or four rounded conversation bubbles floating at different depths, and thin bright connection lines fanning out from the orb to a handful of simple glowing outline icons that read unmistakably as a telephone handset, a calendar, a small clock and a globe. The interface elements are crisp, thin-stroked, softly glowing, arranged with generous empty space between them and clearly layered in front of the scene, like a premium enterprise software campaign visual. Deep navy #003057 fills the depth behind the graphics and pools in the shadows, cyan carries every glow and specular, the counter and the lobby stay warm off-white and neutral warm grey, the hardware is near-black. The image has to say, at a glance and with no caption at all: an artificial intelligence is answering this hotel's calls, in many languages, at the same time, while the front desk gets on with the guests in front of it. Absolutely no text, no lettering, no words, no numbers, no logos and no wordmarks anywhere, on the screens included. No chrome humanoid robot, no matrix code, no wireframe globe, no circuit-board wallpaper. Bright, confident, premium, optimistic.
 ```
 
 #### 7. `home-extension-qr-room`
@@ -173,7 +183,7 @@ A night-time photograph of the reception desk of a small independent European ho
 - **Archivo:** `public/images/home/home-extension-qr-room.webp`
 - **Donde va:** Home / bloque Extensión Dinámica, cabecera de la columna visual. Ratio 16:9 para que la sección completa quepa en una pantalla.
 - **Rol:** Apoyo de seccion
-- **Tamano:** 2400 x 1350 px (16:9)
+- **Tamano:** 2752 x 1536 px (16:9)
 - **Bloque de estilo:** A
 - **Zona segura:** El QR va IMPRESO en la tarjeta dentro de la propia foto (decisión de cliente, cambia el planteamiento anterior de componerlo por CSS). La cara de la tarjeta tiene que quedar frontal, plana, nítida y sin reflejos, y el código ocuparla casi entera. Encuadre panorámico, no vertical.
 - **Alt (ya redactado):** Mesilla de habitación de hotel con un soporte de sobremesa con código QR
