@@ -166,7 +166,7 @@ export function NosotrosTeamAndVision() {
 
             <div className="min-w-0">
               <SmartImage
-                image="home-profile-gestionado-cadena"
+                image="nosotros-vision-reforma"
                 sizes={SIZES.heroSplit}
                 decorative
                 wrapperClassName="d-crop-r"

@@ -68,7 +68,7 @@ export function NosotrosTrust() {
 
           <div data-reveal className="min-w-0 lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
             <SmartImage
-              image="home-differentials-engineer-hands"
+              image="nosotros-trust-escucha"
               sizes={SIZES.heroSplit}
               wrapperClassName="d-crop-l"
             />

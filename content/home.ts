@@ -174,7 +174,7 @@ export const home = {
 
   iandrea: {
     eyebrow:
-      "Una llamada que recepción no atiende puede ser una reserva que se pierde",
+      "Una llamada de recepción que no atiende puede ser una reserva que se pierde",
     title: "iAndrea",
     subtitle: "La voz con inteligencia artificial de Comunica para hoteles",
     /**
@@ -287,8 +287,25 @@ export const home = {
   },
 
   differentials: {
+    /**
+     * Tres lineas, partidas desde el copy y no dejadas al navegador.
+     *
+     * Es una gradacion: se niega el perfil equivocado, se nombra el correcto y
+     * se cierra con la marca. Las tres frases tienen que caer una debajo de otra
+     * para que se lea como escalera; si el navegador reparte los 118 caracteres
+     * por ancho, el corte cae a mitad de frase y la figura desaparece.
+     *
+     * La tercera es el remate y se pinta en cyan, igual que la segunda linea del
+     * titular del hero: es el unico sitio de la seccion donde aparece la marca.
+     */
+    titleLines: [
+      "No necesitas un proveedor que sepa de telecomunicaciones.",
+      "Necesitas uno que entienda tu hotel.",
+      "Necesitas a Comunica.",
+    ],
+    /** Version en una linea, para metadatos y usos sin maquetar. */
     title:
-      "No necesitas un proveedor que sepa de telecomunicaciones. Necesitas uno que entienda tu hotel",
+      "No necesitas un proveedor que sepa de telecomunicaciones. Necesitas uno que entienda tu hotel. Necesitas a Comunica.",
     items: [
       {
         title: "Especialización hotelera",
@@ -319,7 +336,14 @@ export const home = {
   },
 
   method: {
-    title: "Empezamos por entender tu hotel. No por venderte un paquete",
+    /**
+     * El titular de la seccion es ahora la pregunta, y la frase que antes hacia
+     * de titular baja a subtitulo. Peticion de cliente, y ademas ordena mejor la
+     * lectura: "¿Como trabajamos?" nombra la seccion en tres palabras y la
+     * promesa —empezamos por entender, no por vender— pasa a ser la respuesta.
+     */
+    title: "¿Cómo trabajamos?",
+    subtitle: "Empezamos por entender tu hotel. No por venderte un paquete",
     steps: [
       {
         number: "1",

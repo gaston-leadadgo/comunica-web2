@@ -219,6 +219,57 @@ export const soluciones = {
     ],
   },
 
+  /**
+   * Extension Dinamica, version de Soluciones.
+   *
+   * NO es la misma pieza que la de la home, y por eso vive aqui y no se reutiliza
+   * `home.extension`. En la home el bloque tiene que despertar interes en cinco
+   * lineas, asi que arranca por el contexto ("el telefono de la habitacion lleva
+   * decadas...") y los beneficios van como etiquetas sueltas. Aqui el lector ya
+   * ha decidido que le interesa el producto: se entra directamente por el
+   * mecanismo y cada beneficio se argumenta.
+   *
+   * Copy literal del cliente.
+   */
+  extension: {
+    eyebrow: "Innovación en telefonía hotelera",
+    title: "Extensión Dinámica",
+    subtitle: "La extensión de la habitación, en el móvil del huésped",
+    body: [
+      "Con la Extensión Dinámica de Comunica, el huésped escanea un código QR y puede utilizar su propio móvil como extensión de la habitación durante su estancia.",
+      "Una forma más flexible de plantear la telefonía hotelera, especialmente interesante en reformas, ampliaciones y nuevos proyectos.",
+    ],
+    /**
+     * Beneficios argumentados. La home usa `benefits`, una lista de etiquetas
+     * cortas; esta version usa `detailedBenefits`, y `ExtensionBlock` cambia de
+     * pastillas a celdas con titulo y explicacion cuando este campo esta
+     * presente.
+     */
+    detailedBenefits: [
+      {
+        title: "Menos hardware. Menos mantenimiento.",
+        description:
+          "Reduce la dependencia de terminales físicos, cableado específico y equipos que instalar, reparar o sustituir.",
+      },
+      {
+        title: "Una experiencia más mobile-first.",
+        description:
+          "El huésped utiliza el dispositivo que ya conoce y lleva consigo, sin necesidad de depender del teléfono de sobremesa de la habitación.",
+      },
+      {
+        title: "Integrada en el ecosistema del hotel.",
+        description:
+          "Puede formar parte de una arquitectura conjunta con WiFi, voz, iAndrea e integraciones, bajo un mismo proveedor.",
+      },
+    ],
+    closing:
+      "Menos infraestructura que gestionar. Más flexibilidad para comunicar.",
+    cta: {
+      label: "Quiero conocer la Extensión Dinámica",
+      href: `${routes.contacto}?intent=extension`,
+    } satisfies Cta,
+  },
+
   closing: {
     title: "¿No sabes qué solución necesitas?",
     body: [

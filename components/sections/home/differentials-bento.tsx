@@ -123,12 +123,27 @@ export function DifferentialsBento() {
   return (
     <section data-tone="light" className="bg-paper-warm py-section">
       <Container width="wide">
-        {/* Medida ancha a proposito. Son 93 caracteres y contienen
-            "telecomunicaciones.", una palabra de 19: por debajo de ~1.240px el
-            corte natural cae antes de esa palabra y el titular se va a tres
-            lineas aunque geometricamente quepa en dos. */}
-        <h2 className="mx-auto max-w-[46ch] text-center text-display-2 text-balance">
-          <HotelText>{differentials.title}</HotelText>
+        {/* Tres lineas explicitas, una por frase, no una cadena que el navegador
+            reparta por ancho. El titular es una escalera —se niega el proveedor
+            equivocado, se nombra el correcto, se cierra con la marca— y solo
+            funciona si cada peldaño ocupa su propia linea.
+            `text-balance` sigue puesto por linea: las dos primeras son largas y
+            en tablet parten en dos, y ahi el reparto equilibrado sigue haciendo
+            falta. La tercera va en cyan como remate, igual que la segunda linea
+            del titular del hero. */}
+        <h2 className="mx-auto max-w-[46ch] text-center text-display-2">
+          {differentials.titleLines.map((line, i) => (
+            <span
+              key={line}
+              className={cn(
+                "block text-balance",
+                i > 0 && "mt-1",
+                i === differentials.titleLines.length - 1 && "text-cyan-strong",
+              )}
+            >
+              <HotelText>{line}</HotelText>
+            </span>
+          ))}
         </h2>
 
         <div ref={scope}>

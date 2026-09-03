@@ -38,7 +38,7 @@ export default function SolucionesPage() {
           que hace, y acto seguido se prueba. Separarlos obligaria a leer la
           ficha entera de memoria antes de llegar a la demo. */}
       <SolucionesIandreaDemo />
-      <ExtensionBlock />
+      <ExtensionBlock content={soluciones.extension} />
       <ClosingCta
         title={soluciones.closing.title}
         body={soluciones.closing.body}

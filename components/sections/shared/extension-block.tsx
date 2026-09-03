@@ -27,10 +27,40 @@ import { useBrandMotion } from "@/lib/gsap/use-brand-motion";
  * Solo queda un movimiento: la tira de pasos entra una vez con stagger. Sin
  * scrub, porque la seccion completa cabe en pantalla y un scrub dejaria los
  * pasos a medio opacar sin nada de scroll que los complete.
+ *
+ * ---------------------------------------------------------------------------
+ * Por que recibe el copy por prop
+ *
+ * La home y Soluciones cuentan la Extension Dinamica con textos distintos: en la
+ * home hay que despertar interes y se entra por el contexto; en Soluciones el
+ * lector ya viene interesado y se entra por el mecanismo, con cada beneficio
+ * argumentado. Antes las dos paginas renderizaban el copy de la home, asi que
+ * Soluciones era una copia literal de un bloque que ya habia aparecido.
+ *
+ * El maquetado si es el mismo, y por eso sigue habiendo un solo componente. La
+ * unica diferencia estructural son los beneficios: con `benefits` (etiquetas
+ * cortas) se pintan como pastillas; con `detailedBenefits` (titulo + una linea)
+ * como celdas.
  */
-export function ExtensionBlock() {
-  const { extension } = home;
-  const m = extension.mockup;
+
+type Benefit = { title: string; description: string };
+
+export type ExtensionContent = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  body: readonly string[];
+  benefits?: readonly string[];
+  detailedBenefits?: readonly Benefit[];
+  closing: string;
+  cta: { label: string; href: string };
+};
+
+export function ExtensionBlock({ content }: { content: ExtensionContent }) {
+  const extension = content;
+  // Microcopy de la maqueta del flujo QR: es cromo de interfaz, no copy de
+  // pagina, asi que es el mismo en las dos y vive en un solo sitio.
+  const m = home.extension.mockup;
 
   const steps = [
     { key: "habitacion", label: m.room, detail: m.guestStatus, icon: "hotel" as const },
@@ -78,17 +108,37 @@ export function ExtensionBlock() {
               ))}
             </div>
 
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {extension.benefits.map((b) => (
-                <li
-                  key={b}
-                  className="flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 font-mono text-[0.75rem] text-navy"
-                >
-                  <Icon name="check" size={13} className="text-positive" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+            {extension.detailedBenefits ? (
+              <ul className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-lg bg-line">
+                {extension.detailedBenefits.map((b) => (
+                  <li key={b.title} className="min-w-0 bg-paper-warm p-5">
+                    <p className="flex items-start gap-2.5 text-card-title">
+                      <Icon
+                        name="check"
+                        size={15}
+                        className="mt-0.5 shrink-0 text-positive"
+                      />
+                      {b.title}
+                    </p>
+                    <p className="mt-2 pl-[1.55rem] text-small text-fg-muted">
+                      {b.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {extension.benefits?.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 font-mono text-[0.75rem] text-navy"
+                  >
+                    <Icon name="check" size={13} className="text-positive" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <p className="measure-body mt-6 text-small text-fg-muted">
               {extension.closing}

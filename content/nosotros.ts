@@ -83,11 +83,11 @@ export const nosotros = {
     ],
     cases: [
       {
-        label: "Para un hotel independiente",
+        label: "Para un hotel independiente significa:",
         text: "«Aquí me lo pueden resolver.»",
       },
       {
-        label: "Para una cadena",
+        label: "Para una cadena significa:",
         text: "Simplificar proveedores, propiedades, integraciones y gestión administrativa.",
       },
     ],

@@ -71,9 +71,15 @@ export function MethodStack() {
       />
 
       <Container>
+        {/* La pregunta manda y la promesa la responde debajo. El subtitulo baja
+            a `display-3` porque a `display-2` las dos competirian y la seccion
+            tendria dos titulares en lugar de uno. */}
         <h2 className="mx-auto max-w-[26ch] text-center text-display-2 text-balance">
-          <HotelText>{method.title}</HotelText>
+          {method.title}
         </h2>
+        <p className="mx-auto mt-4 max-w-[34ch] text-center text-display-3 text-fg-muted text-balance">
+          <HotelText>{method.subtitle}</HotelText>
+        </p>
 
         <div ref={scope} className="mt-16 flex flex-col gap-6 lg:mt-24 lg:gap-0">
           {method.steps.map((step, i) => (
