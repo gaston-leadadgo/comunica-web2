@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/section";
 import { Icon } from "@/components/ui/icon";
 import { home } from "@/content/home";
+import type { ImageKey } from "@/content/images";
 import { useBrandMotion } from "@/lib/gsap/use-brand-motion";
 
 /**
@@ -56,7 +57,18 @@ export type ExtensionContent = {
   cta: { label: string; href: string };
 };
 
-export function ExtensionBlock({ content }: { content: ExtensionContent }) {
+export function ExtensionBlock({
+  content,
+  image,
+}: {
+  content: ExtensionContent;
+  /**
+   * La foto tambien es prop. Hoy las dos paginas pasan la misma —el escritorio
+   * sin telefono— pero pasarla explicitamente evita que el componente decida por
+   * su cuenta cual toca, que es lo que hacia antes leyendo `home` a pelo.
+   */
+  image: ImageKey;
+}) {
   const extension = content;
   // Microcopy de la maqueta del flujo QR: es cromo de interfaz, no copy de
   // pagina, asi que es el mismo en las dos y vive en un solo sitio.
@@ -170,7 +182,7 @@ export function ExtensionBlock({ content }: { content: ExtensionContent }) {
                 al vector compuesto (`QrMotif` sigue en el repo). */}
             <div className="d-crop-r relative">
               <SmartImage
-                image="home-extension-qr-room"
+                image={image}
                 sizes={SIZES.heroSplit}
                 decorative
                 wrapperClassName="h-full"

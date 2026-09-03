@@ -197,22 +197,6 @@ export const images = {
     prompt: `A bright, modern, openly technological product image of an AI voice assistant working at the reception desk of a hotel, shot in landscape 4:3. The real, photographed half of the picture: an open laptop and a slim black IP desk phone standing on the pale stone reception counter in the lower right of the frame, and behind them, softly out of focus, the warm daylit lobby of a busy hotel with several guests waiting at the counter, reduced to gentle blurred shapes so that no face is identifiable and nobody is looking towards the camera. The graphic half, and this is the real subject: rising out of the laptop screen and floating in the air above the counter, a luminous electric cyan #009FE3 interface made of clean emissive geometry - a glowing cyan orb at its centre standing for the voice of the assistant, concentric voice rings radiating outward from it, a bright audio waveform curving across the screen, three or four rounded conversation bubbles floating at different depths, and thin bright connection lines fanning out from the orb to a handful of simple glowing outline icons that read unmistakably as a telephone handset, a calendar, a small clock and a globe. The interface elements are crisp, thin-stroked, softly glowing, arranged with generous empty space between them and clearly layered in front of the scene, like a premium enterprise software campaign visual. Deep navy #003057 fills the depth behind the graphics and pools in the shadows, cyan carries every glow and specular, the counter and the lobby stay warm off-white and neutral warm grey, the hardware is near-black. The image has to say, at a glance and with no caption at all: an artificial intelligence is answering this hotel's calls, in many languages, at the same time, while the front desk gets on with the guests in front of it. Absolutely no text, no lettering, no words, no numbers, no logos and no wordmarks anywhere, on the screens included. No chrome humanoid robot, no matrix code, no wireframe globe, no circuit-board wallpaper. Bright, confident, premium, optimistic.`,
   },
 
-  "home-extension-qr-room": {
-    key: "home-extension-qr-room",
-    src: "/images/home/home-extension-qr-room.webp",
-    alt: "Mesilla de habitación de hotel con un soporte de sobremesa con código QR",
-    width: 2752,
-    height: 1536,
-    usage:
-      "Home / bloque Extensión Dinámica, cabecera de la columna visual. Ratio 16:9 para que la sección completa quepa en una pantalla.",
-    role: "apoyo",
-    grading: "A",
-    safeArea:
-      "El QR va IMPRESO en la tarjeta dentro de la propia foto. La cara de la tarjeta tiene que quedar frontal, plana, nítida y sin reflejos, y el código ocuparla casi entera. Encuadre panorámico, no vertical. CRÍTICO: no puede aparecer NINGÚN teléfono de habitación. La Extensión Dinámica existe justamente para eliminarlo, así que la versión anterior de la foto —con el teléfono de sobremesa a la derecha— contradecía el argumento de la sección.",
-    ready: true,
-    prompt: `A wide horizontal photograph of the bedside table of a calm, modest hotel room in the late afternoon, shot from a shallow angle just above the surface so the composition is panoramic rather than tall. The subject of the photograph is a small white acrylic tent card standing upright on the table, turned so that its front face is square to the lens and fully visible, and on that face, printed large and perfectly flat, a black and white QR code: a dense square matrix of small black modules on white, with the three characteristic solid square finder patterns in its top-left, top-right and bottom-left corners and a clean white quiet zone around the edge. The code fills most of the card face and must be sharp, high in contrast, unblurred, undistorted and free of glare or reflections. It is printed on the card as ink on plastic - not glowing, not projected, not floating in the air. THE SINGLE MOST IMPORTANT REQUIREMENT, and the reason this image is being remade: there must be NO hotel room telephone anywhere in the picture. No desk phone, no handset, no cradle, no dial pad, no coiled cable, no wall-mounted phone, nothing that reads as a landline telephone, neither on the bedside table nor on the wall nor anywhere in the background. The place on the table where a room telephone would normally sit is deliberately and visibly empty. The only telephone in the whole scene is the guest's own modern smartphone, lying face up and unlocked on the table beside the tent card, close enough to read as the thing the code is meant for. Also on the table, a slim reading lamp casting warm light. Behind, the corner of a crisply made bed and a warm off-white wall. Soft golden daylight from a window out of frame on the left, deep navy in the shadows. Nobody in frame. Ordinary, well kept, real: a room in a working hotel, not a suite in a brochure. One explicit exception to the house style rule that forbids graphics: the square black and white code pattern is required and must be clearly visible. Apart from it there is still absolutely no text, no lettering, no numbers, no logos and no watermarks anywhere in the image.`,
-  },
-
   "home-differentials-engineer-hands": {
     key: "home-differentials-engineer-hands",
     src: "/images/home/home-differentials-engineer-hands.webp",
@@ -240,42 +224,57 @@ export const images = {
     prompt: `A vertical overhead still-life photograph on a seamless warm off-white #FAFAF8 paper surface, arranged with the discipline of a museum display: a plain white hotel keycard, a nano SIM card, a small white matte sensor and a slim black television remote control, stacked in one clean vertical column with generous even gaps, all aligned to the same axis. Hard directional daylight from the upper left casts four crisp parallel shadows in deep navy. One object has a single tiny electric cyan #009FE3 LED lit. Nothing else in frame. Extremely clean editorial product photography, immaculate, almost clinical, with a lot of empty paper around the objects. This is the one deliberately abstract image in the set: it is the inventory of what goes into a hotel, laid out like evidence.`,
   },
 
+  "soluciones-extension-desk-sin-telefono": {
+    key: "soluciones-extension-desk-sin-telefono",
+    src: "/images/soluciones/soluciones-extension-desk-sin-telefono.webp",
+    alt: "Escritorio de una habitación de hotel con una tarjeta con código QR y sin teléfono de sobremesa",
+    width: 2752,
+    height: 1536,
+    usage:
+      "Home Y Soluciones / bloque Extensión Dinámica, cabecera de la columna visual. Mismo ratio 16:9 en las dos paginas porque comparten componente.",
+    role: "apoyo",
+    grading: "A",
+    safeArea:
+      "La cara de la tarjeta: frontal, plana, nítida y sin reflejos, con el código ocupándola casi entera. Y el escritorio VACÍO: ni teléfono, ni base, ni cable de teléfono. El hueco es el tema de la foto.",
+    ready: true,
+    prompt: `A wide horizontal photograph of the writing desk of a calm, modest hotel room in the morning, shot from a shallow angle just above the surface so the composition is panoramic rather than tall. The subject is twofold. First, a small white acrylic tent card standing upright on the desk, turned so that its front face is square to the lens and fully visible, and on that face, printed large and perfectly flat, a black and white QR code: a dense square matrix of small black modules on white, with the three characteristic solid square finder patterns in its top-left, top-right and bottom-left corners and a clean white quiet zone around the edge. The code fills most of the card face and must be sharp, high in contrast, unblurred, undistorted and free of glare or reflections. It is printed on the card as ink on plastic - not glowing, not projected, not floating in the air. Second, and just as important, the empty space beside it: the part of the desk where a hotel room telephone used to stand is now completely clear, with only a faint clean rectangle in the dust and one small unused socket on the skirting board behind to suggest that something was taken away. There must be NO telephone anywhere in the frame: no handset, no cradle, no coiled cable, no dock. On the rest of the desk, only a folded leather folio and a glass of water. Behind, a warm off-white wall and the edge of a window with clean morning daylight coming from the right, cooler than afternoon light, deep navy in the shadows. Nobody in frame. Ordinary, well kept, real: a room in a working hotel, not a suite in a brochure. One explicit exception to the house style rule that forbids graphics: this square black and white code pattern is required and must be clearly visible. Apart from it there is still absolutely no text, no lettering, no numbers, no logos and no watermarks anywhere in the image.`,
+  },
+
   // -------------------------------------------------------------- NOSOTROS
   // Las dos secciones de Nosotros reutilizaban fotos de la home
   // (`home-differentials-engineer-hands` en Confianza y
   // `home-profile-gestionado-cadena` en Vision), asi que al recorrer el sitio se
-  // veia dos veces la misma imagen en paginas distintas. Estas dos son propias.
+  // veia dos veces la misma imagen en paginas distintas. Estas dos son propias, y
+  // son exactamente los mismos archivos que usa la otra version del sitio: las
+  // dos webs comparten banco de imagenes y solo se diferencian en el hero.
 
-  "nosotros-trust-escucha": {
-    key: "nosotros-trust-escucha",
-    src: "/images/nosotros/nosotros-trust-escucha.webp",
-    alt: "Un técnico de Comunica tomando notas mientras la responsable del hotel le explica una incidencia",
+  "nosotros-trust-delegar": {
+    key: "nosotros-trust-delegar",
+    src: "/images/nosotros/nosotros-trust-delegar.webp",
+    alt: "La responsable de un hotel al teléfono en la oficina interna, tranquila, mientras al fondo se trabaja en la instalación",
     width: 1400,
     height: 1750,
     usage:
-      "Nosotros / sección «Confiable no es una palabra bonita», columna derecha. Se recorta con `d-crop-l`, así que el borde IZQUIERDO se come con una curva muy amplia.",
+      "Nosotros / bloque «Confiable no es una palabra bonita», columna derecha. Vertical 4:5, el mismo ratio que tenía la foto prestada, para no mover la columna.",
     role: "apoyo",
     grading: "A",
-    safeArea:
-      "El recorte `d-crop-l` muerde una curva grande en el lado izquierdo: nada importante en esa franja. Las dos personas van centradas y a la derecha.",
-    ready: false,
-    prompt: `A vertical photograph taken from the guest side of the reception counter of a small independent European hotel in the middle of the morning. Two people, and the photograph is about the one who is listening. On the right, a technician in his thirties in a plain dark work polo, no jacket and no tie, standing with a small pocket notebook open in one hand and a pen in the other, actually writing in it, head tilted down towards the page. On the left and half turned away from us, the owner of the hotel, a woman in her fifties in ordinary working clothes, mid-sentence, one hand lifted in the middle of explaining something, her attention entirely on him. Neither of them looks at the camera and neither of them smiles at it; we catch them three-quarters, and her face is partly turned away. It has to be immediately readable that he is taking down what she says rather than presenting anything to her: no laptop open between them, no tablet held up, no brochure, nobody pointing at a screen. Between them on the dark stone counter, a slim black IP desk phone with one small status light glowing electric cyan #009FE3, a wooden key rack on the wall behind her, and a card printer pushed to one side. Warm off-white walls, bright soft daylight from a tall window out of frame on the left. The left quarter of the frame is quiet and low in detail because a wide curve will be cut out of that edge. Documentary, unposed, absolutely not a stock photograph: two people solving something between them at a counter.`,
+    safeArea: "Franja inferior del 20 % de tono uniforme.",
+    ready: true,
+    prompt: `A vertical photograph taken inside the small back office of an independent hotel, just behind reception. In the foreground, the hotel manager, a woman in her fifties in real working clothes, sits on the corner of the desk with a telephone handset held to her ear, relaxed, one arm across her body, mid-sentence and clearly listening rather than complaining - the posture of someone who has called a person she already knows and does not have to explain anything to. She is turned three-quarters away and her face is mostly out of view; she never looks at the camera. On the desk in front of her, a spread-out printed floor plan of the building, a mug, and a rack of room keys, with an open key cabinet on the wall behind. Deeper into the frame and softly out of focus through the open office door, the corridor beyond, where the door of a wall-mounted network cabinet stands open and a single link light glows electric cyan #009FE3 - the work is happening, but it is not her problem and it is not the subject of the photograph. Soft even daylight from a window on the left. The bottom fifth of the frame is out-of-focus desk surface with no detail, reserved for a caption. The photograph is about calm delegation: the argument is her posture, not the equipment.`,
   },
 
-  "nosotros-vision-reforma": {
-    key: "nosotros-vision-reforma",
-    src: "/images/nosotros/nosotros-vision-reforma.webp",
-    alt: "Instalación de una nueva toma de red en una habitación de hotel en reforma",
+  "nosotros-innovacion-preparado": {
+    key: "nosotros-innovacion-preparado",
+    src: "/images/nosotros/nosotros-innovacion-preparado.webp",
+    alt: "Rellano de servicio de un hotel con una canalización nueva y ordenada junto al cableado antiguo ya retirado",
     width: 1400,
     height: 1050,
     usage:
-      "Nosotros / sección «Hoy resolvemos. Mañana nos anticipamos», columna derecha. Se recorta con `d-crop-r`, así que el borde DERECHO se come con una curva muy amplia.",
+      "Nosotros / bloque de innovación, columna derecha. Ratio 4:3, el mismo que tenía la foto prestada.",
     role: "apoyo",
     grading: "A",
-    safeArea:
-      "El recorte `d-crop-r` muerde una curva grande en el lado derecho: nada importante en esa franja.",
-    ready: false,
-    prompt: `A horizontal photograph of a guest room of a small European hotel caught in the middle of a refurbishment, in flat bright daylight. The bed is stripped and the mattress is still wrapped in its factory plastic, a canvas dust sheet covers part of the floor, and a short aluminium step ladder stands folded against the wall. Kneeling beside the bedside table, a technician in his thirties in a plain dark work polo is screwing a brand new white network wall plate into a freshly cut opening, both hands busy on the work, face down and turned away from us. A couple of steps behind him and slightly out of focus, the hotel's manager, a woman in her fifties in ordinary working clothes, stands with a folded sheet of paper and a pen, writing a note to herself while she looks at the wall he is working on. Neither of them looks at the camera. On the floor beside him, a neat coil of new network cable and a small pouch of tools; one tiny electric cyan #009FE3 indicator glows on a compact tester lying next to the wall plate, the only saturated colour in the frame. Through the doorway behind them, a slice of finished corridor shows the room is one of several. Warm off-white walls, deep navy shadows, dusty daylight from an uncurtained window on the left. The right quarter of the frame is quiet and low in detail because a wide curve will be cut out of that edge. The photograph has to read as preparation rather than repair: this room is being got ready for what comes next, not fixed after a breakdown. Documentary, undramatic, real work in a real building.`,
+    ready: true,
+    prompt: `A photograph of a service stair landing in a working hotel, the part guests never see: painted breeze-block walls, a fire door, a mop bucket parked in the corner. The subject is a comparison that reads instantly and without any caption. Running up the wall, a brand new length of clean white cable trunking, its lid off at one end so that you can see the cables inside are combed straight and that there is deliberate empty room left beside them for more. Lying on the floor at its foot, a large coil of the old cable that has just been taken out: grey, dusty, tangled, tied off with a cable tie, finished with. Standing to one side and looking up at the new run rather than at the camera, the hotel's maintenance lead, a man in his fifties in a plain work polo with his sleeves pushed up, one hand still holding a screwdriver at his side, taking a moment to look at what has been left ready. His face is turned away. One small electric cyan #009FE3 status light glows on a compact device fixed at the top of the new run. Cool even daylight from a high window out of frame. Calm, ordinary, competent: nothing is being demonstrated to anyone, the work is simply finished and prepared for whatever comes next.`,
   },
 
   // -------------------------------------------------------------------- OG

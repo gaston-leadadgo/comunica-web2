@@ -47,7 +47,10 @@ export default function HomePage() {
       <ProfileAccordion />
       <InnovationIntro />
       <IandreaBlock />
-      <ExtensionBlock content={home.extension} />
+      <ExtensionBlock
+        content={home.extension}
+        image="soluciones-extension-desk-sin-telefono"
+      />
 
       {/* ACCION */}
       <DifferentialsBento />

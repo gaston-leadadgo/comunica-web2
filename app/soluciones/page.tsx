@@ -38,7 +38,11 @@ export default function SolucionesPage() {
           que hace, y acto seguido se prueba. Separarlos obligaria a leer la
           ficha entera de memoria antes de llegar a la demo. */}
       <SolucionesIandreaDemo />
-      <ExtensionBlock content={soluciones.extension} />
+      {/* Misma foto que la home: el escritorio sin telefono. */}
+      <ExtensionBlock
+        content={soluciones.extension}
+        image="soluciones-extension-desk-sin-telefono"
+      />
       <ClosingCta
         title={soluciones.closing.title}
         body={soluciones.closing.body}
